@@ -1,6 +1,6 @@
 #pragma once
 #include "stdafx.h"
-#include "Win10Desktops.h"
+#include "VirtualDesktops.h"
 
 #define DllExport   __declspec( dllexport )
 

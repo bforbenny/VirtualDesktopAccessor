@@ -1,10 +1,13 @@
 # VirtualDesktopAccessor.dll
 
-DLL for accessing Windows 11 (tested with build 22621.1105) Virtual Desktop features from e.g. AutoHotkey. MIT Licensed, see LICENSE.txt (c) Jari Pennanen, 2015-2018
+![Stability:Beta](https://img.shields.io/badge/stability-beta-orange)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/release/bforbenny/VirtualDesktopAccessor)](https://github.com/bforbenny/VirtualDesktopAccessor/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE.txt)
+[![GitHub issues](https://img.shields.io/github/issues/bforbenny/VirtualDesktopAccessor)](https://GitHub.com/bforbenny/VirtualDesktopAccessor/issues/)
 
-Download the VirtualDesktopAccessor.dll from directory x64\Release\VirtualDesktopAccessor.dll in the repository. This DLL works only on 64 bit Windows 10.
+DLL for accessing Windows 11 (tested with build 22621.1105) Virtual Desktop features from e.g. AutoHotkey.
 
-You probably first need the [VS 2017 runtimes vc_redist.x64.exe and/or vc_redist.x86.exe](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads), if they are not installed already. I've built the DLL using VS 2017, and Microsoft is not providing those runtimes (who knows why) with Windows 10 yet.
+Download the VirtualDesktopAccessor.dll from directory x64\Release\VirtualDesktopAccessor.dll in the repository. This DLL works only on 64 bit Windows 11.
 
 ## AutoHotkey script as example:
 
