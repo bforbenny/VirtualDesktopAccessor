@@ -5,6 +5,7 @@ EXPORTS
 	GetDesktopIdByNumber @12
     GetDesktopNumber @7
     GetDesktopNumberById @2
+    GetCurrentDesktopName @23
     GetWindowDesktopId @3
     GetWindowDesktopNumber @4
     IsWindowOnCurrentVirtualDesktop @5

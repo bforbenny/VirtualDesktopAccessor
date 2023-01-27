@@ -123,13 +123,13 @@ int DllExport GetDesktopCount()
 	return -1;
 }
 
-std::string DllExport GetDesktopNameByID(GUID desktopId) {
+std::wstring DllExport GetDesktopNameByID(GUID desktopId) {
 	_RegisterService();
 
 	IObjectArray* pObjectArray = nullptr;
 	HRESULT hr = pDesktopManagerInternal->GetDesktops(nullptr, &pObjectArray);
 	int found = -1;
-	std::string name = "";
+	std::wstring name = L"";
 
 	if (SUCCEEDED(hr))
 	{
@@ -146,11 +146,12 @@ std::string DllExport GetDesktopNameByID(GUID desktopId) {
 					continue;
 
 				GUID id = { 0 };
+				std::wstring name = L"";
 				if (SUCCEEDED(pDesktop->GetID(&id)) && id == desktopId)
 				{
 					found = i;
-					pDesktop->GetName();
-					name = "";
+					pDesktop->GetName(&name);
+					//name = L"Hello World";
 					pDesktop->Release();
 					break;
 				}
@@ -314,11 +315,11 @@ BOOL DllExport MoveWindowToDesktopNumber(HWND window, int number) {
 }
 
 
-std::string DllExport GetDesktopName(IVirtualDesktop* pDesktop) {
+std::wstring DllExport GetDesktopName(IVirtualDesktop* pDesktop) {
 	_RegisterService();
 
 	if (pDesktop == nullptr) {
-		return "";
+		return L"";
 	}
 
 	GUID guid;
@@ -327,7 +328,7 @@ std::string DllExport GetDesktopName(IVirtualDesktop* pDesktop) {
 		return GetDesktopNameByID(guid);
 	}
 
-	return "";
+	return L"Err 200012";
 }
 
 int DllExport GetDesktopNumber(IVirtualDesktop *pDesktop) {
@@ -363,9 +364,9 @@ int DllExport GetCurrentDesktopNumber() {
 	return number;
 }
 
-std::string DllExport GetCurrentDesktopName() {
+std::wstring DllExport GetCurrentDesktopName() {
 	IVirtualDesktop* virtualDesktop = GetCurrentDesktop();
-	std::string name = GetDesktopName(virtualDesktop);
+	std::wstring name = GetDesktopName(virtualDesktop);
 	virtualDesktop->Release();
 	return name;
 }

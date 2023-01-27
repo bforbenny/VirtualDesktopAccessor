@@ -174,7 +174,7 @@ public:
 #if NET5_0_OR_GREATER
 	virtual HRESULT STDMETHODCALLTYPE GetString() = 0;
 #else
-	virtual HRESULT STDMETHODCALLTYPE GetName() = 0;
+	virtual HRESULT STDMETHODCALLTYPE GetName(std::wstring *name) = 0;
 #endif
 	virtual HRESULT STDMETHODCALLTYPE GetWallpaperPath() = 0;
 };

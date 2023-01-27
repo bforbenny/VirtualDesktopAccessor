@@ -86,7 +86,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	std::wcout << "Desktops: " << GetDesktopCount() << "\r\n";
 	std::wcout << "Console Window's Desktop Number: " << GetWindowDesktopNumber(GetConsoleWindow()) << std::endl;
 	std::wcout << "Current Desktop Number: " << GetCurrentDesktopNumber() << "\r\n";
-	//std::cout <<  GetCurrentDesktopName() ;
+	std::wcout << "Current Desktop Name: " << GetCurrentDesktopName() << "\r\n";
 
 	HWND notepad = FindWindow(_T("Notepad"), NULL);
 	if (notepad != 0) {
